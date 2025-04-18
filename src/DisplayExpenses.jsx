@@ -1,5 +1,5 @@
 import React from "react";
-import ExpenseSearh from '.components/ExpenseSearch';
+import ExpenseSearh from './components/ExpenseSearch';
 import ExpenseList from "./components/ExpenseList"
 
 const DisplayExpenses = () => {
