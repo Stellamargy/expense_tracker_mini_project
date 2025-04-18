@@ -1,14 +1,12 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
-    <div className='bg-primary'>
-      <h1>Expense Tracker</h1>
-      
+    <div className="app-container">
+      <main className="main-content"></main>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
