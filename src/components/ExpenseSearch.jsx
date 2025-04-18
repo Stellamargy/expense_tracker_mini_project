@@ -2,7 +2,7 @@ import React from 'react'
 
 function ExpenseSearch() {
   return (
-    <div>
+    <div className="expense-search container">
       
     </div>
   )
