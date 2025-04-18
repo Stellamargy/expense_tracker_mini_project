@@ -1,18 +1,19 @@
-import React from 'react'
+import React from "react";
+import ExpenseSearh from '.components/ExpenseSearch';
+import ExpenseList from "./components/ExpenseList"
 
 const DisplayExpenses = () => {
   return (
-   <section className='display-expenses'>
-    <section className='search-expense'>
+    <section className="display-expenses">
+      <section className="search-expense">
+        <ExpenseSearh />
+      </section>
+      <section className="table-expense">
+        < ExpenseList />
 
+      </section>
     </section>
-    <section className='table-expense'>
+  );
+};
 
-    </section>
-
-   </section>
-
-  )
-}
-
-export default DisplayExpenses
+export default DisplayExpenses;
