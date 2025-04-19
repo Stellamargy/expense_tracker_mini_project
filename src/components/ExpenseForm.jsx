@@ -10,9 +10,10 @@ function ExpenseForm() {
         </label>
         <input
           type="text"
-          className="form-control"
+          className="form-control form-control-sm"
           id="expense-name"
           name="expense-name"
+          placeholder="expense-name"
         />
       </div>
       <div className="mb-1">
@@ -21,9 +22,10 @@ function ExpenseForm() {
         </label>
         <input
           type="number"
-          className="form-control"
+          className="form-control form-control-sm"
           id="expense-amount"
           name="expense-amount"
+          placeholder="expense amount"
         />
       </div>
       <div className="mb-1">
@@ -32,9 +34,10 @@ function ExpenseForm() {
         </label>
         <input
           type="date"
-          className="form-control"
+          className="form-control form-control-sm"
           id="expense-date"
           name="expense-date"
+          
         />
       </div>
       <div className="mb-1">
@@ -43,19 +46,20 @@ function ExpenseForm() {
         </label>
         <input
           type="email"
-          className="form-control"
+          className="form-control form-control-sm"
           id="expense-name"
           name="expense-name"
+          placeholder="expense category"
         />
       </div>
       <div class="mb-2">
         <label htmlForfor="expense-description" class="form-label">
          Expense Description
         </label>
-        <textarea class="form-control" id="expense-description" rows="3" name="expense-description"></textarea>
+        <textarea class="form-control form-control-sm" id="expense-description" rows="3" name="expense-description" placeholder="expense description"></textarea>
        
       </div>
-      <div class="mb-1">
+      <div class="mb-2">
        <button className="btn btn-dark d-block w-100">
         Add Expense
        </button>

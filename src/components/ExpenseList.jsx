@@ -2,8 +2,8 @@ import React from "react";
 
 function ExpenseList() {
   return (
-    <div className="expense-list-container mt-3">
-      <table className="table  table-striped">
+    <div className="expense-list-container mt-3 " style={{ maxHeight: "60vh", overflowY: "auto" }}>
+      <table className="table  table-striped ">
         <thead className="table-dark">
           <tr>
             <th scope="col">Expense Name</th>
@@ -14,13 +14,73 @@ function ExpenseList() {
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
+            <td>Stella</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>Stella</td>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
