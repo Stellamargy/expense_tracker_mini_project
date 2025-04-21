@@ -8,12 +8,11 @@ import AddExpense from "./AddExpense";
 const App = () => {
   return (
     <div className="app-container ">
-      <div className="app-wrapper h-100  d-flex flex-column ">
-        <header className="app-header  w-100 d-flex flex-column  justify-content-center">
+      <div className="app-wrapper  ">
+        <header className="app-header">
           <AppInfo />
         </header>
-
-        <main className="main-content flex-grow-1  d-flex flex-row">
+        <main className="main-content ">
           <AddExpense />
           <DisplayExpenses />
         </main>
