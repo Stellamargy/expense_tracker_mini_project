@@ -55,7 +55,7 @@ function ExpenseForm() {
         </div>
 
         <div className="mb-2">
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="btn btn-secondary w-100">
             Add Expense
           </button>
         </div>

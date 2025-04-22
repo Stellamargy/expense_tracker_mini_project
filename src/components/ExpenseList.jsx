@@ -11,6 +11,7 @@ function ExpenseList() {
             <th scope="col">Expense Name</th>
             <th scope="col">Expense Description</th>
             <th scope="col">Expense Amount</th>
+            
           </tr>
         </thead>
       </table>
