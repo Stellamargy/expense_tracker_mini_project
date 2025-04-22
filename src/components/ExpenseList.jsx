@@ -1,7 +1,22 @@
 import React from "react";
 
 function ExpenseList() {
-  return <div className="expense-list-container">Expense List</div>;
+  return (
+    <div className="mb-4">
+      <div className="table-responsive table-resonsive-large">
+      <table className="table table-secondary table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Expense Date</th>
+            <th scope="col">Expense Name</th>
+            <th scope="col">Expense Description</th>
+            <th scope="col">Expense Amount</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    </div>
+  );
 }
 
 export default ExpenseList;
