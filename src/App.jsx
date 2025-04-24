@@ -17,9 +17,9 @@ const App = () => {
     const storedData = localStorage.getItem("expenseData");
     if (!storedData) {
       localStorage.setItem("expenseData", JSON.stringify(expenseData));
-      setExpenses([...expenseData]);
+      setExpenses(expenseData);
     } else {
-      setExpenses([...JSON.parse(storedData)]);
+      setExpenses(JSON.parse(storedData));
     }
   }, []); 
    // Update localStorage when expenses state changes
@@ -42,7 +42,7 @@ const App = () => {
               <ExpenseSearch />
             </div>
             <div className="expense-list-wrapper mt-4">
-              <ExpenseList />
+              <ExpenseList expenses={expenses}/>
             </div>
           </section>
         </div>

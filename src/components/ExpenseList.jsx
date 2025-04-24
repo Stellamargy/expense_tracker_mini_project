@@ -1,6 +1,6 @@
 import React from "react";
 
-function ExpenseList() {
+function ExpenseList({expenses}) {
   return (
     <div className="mb-4">
       <div className="table-responsive table-responsive-large">
