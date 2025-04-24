@@ -16,3 +16,16 @@
     width:50%;
     border:1px solid black;
 }
+
+
+
+
+  @media (min-width: 992px) {
+    .table-scroll {
+        max-height: 400px;
+        overflow-y: auto;
+       
+      }
+  }
+  
+  
