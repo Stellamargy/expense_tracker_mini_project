@@ -51,7 +51,7 @@ const App = () => {
             <section className="search-expense-wrapper mt-4 mt-lg-0">
               <ExpenseSearch />
             </section>
-            <section className="expense-list-wrapper mt-4">
+            <section className="expense-list-wrapper mt-1">
               <h2 className="fw-bolder text-danger h-6">Expenses</h2>
               <ExpenseList expenses={expenses} />
             </section>{" "}
