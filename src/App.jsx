@@ -5,37 +5,39 @@ import ExpenseList from "./components/ExpenseList";
 import ExpenseSearch from "./components/ExpenseSearch";
 import ExpenseForm from "./components/ExpenseForm";
 import Header from "./components/Header";
-import expenseData from "./data/expenseData";
+// import expenseData from "./data/expenseData";
 import { useState } from "react";
 import { useEffect } from "react";
-console.log(expenseData);
+const storedItems=[
+  {
+    expenseDate: "2025-04-09",
+    expenseName: "Internet Bill",
+    expenseDescription: "Monthly internet bill",
+    expenseCategory: "Utilities",
+  },
+  {
+    expenseDate: "2025-04-10",
+    expenseName: "Movie Ticket",
+    expenseDescription: "Movie night with friends",
+    expenseCategory: "Entertainment",
+  },
+]
 
 const App = () => {
-  const [expenses, setExpenses] = useState(expenseData);
-
-  const [expense, setExpense] = useState({
-    expenseDate: "",
-    expenseName: "",
-    expenseDescription: "",
-    expenseCategory: "",
-  });
-  // // Check localStorage on mount
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem("expenseData");
-  //   if (!storedData) {
-  //     localStorage.setItem("expenseData", JSON.stringify(expenseData));
-  //     setExpenses(expenseData);
-  //   } else {
-  //     setExpenses(JSON.parse(storedData));
-  //   }
-  // }, []);
-
-  //  // Update localStorage when expenses state changes
-  //  useEffect(() => {
-  //   if (expenses.length > 0) {
-  //     localStorage.setItem("expenseData", JSON.stringify(expenses));
-  //   }
-  // }, [expenses]);
+  const [expenses, setExpenses] = useState([]);
+  // Create local storage once
+  useEffect(() => {
+    const expenseData = localStorage.getItem("expenses");
+    if (expenseData) {
+      setExpenses(JSON.parse(expenseData));
+    } else {
+      localStorage.setItem(
+        "expenses",
+        JSON.stringify(storedItems)
+      );
+      setExpenses(storedItems);
+    }
+  }, []);
 
   const handleAddExpense = () => {};
 
