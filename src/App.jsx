@@ -26,21 +26,11 @@ const storedItems=[
 ]
 
 const App = () => {
-  const [expenses, setExpenses] = useState(storedItems);
- // sets up local storage
-  useEffect(() => {
-    const expenseData = localStorage.getItem("expenses");
-    if (!expenseData) {
-      // setExpenses(JSON.parse(expenseData));
-      localStorage.setItem(
-        "expenses",
-        JSON.stringify(storedItems)
-      );
-     
-    }
-  }
-   , []
-      );
+  const [expenses, setExpenses] = useState(()=>{
+    const data = localStorage.getItem("expenses")
+    return data ? JSON.parse(data): storedItems
+  });
+  
 
   const handleAddExpense = (formExpense) => {
    setExpenses(prev=>[...prev, formExpense])
