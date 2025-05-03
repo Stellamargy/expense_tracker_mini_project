@@ -8,10 +8,11 @@ function ExpenseList({ expenses }) {
        
           <thead>
             <tr>
-              <th scope="col" className="text-danger">Expense Date</th>
-              <th scope="col" className="text-danger">Expense Name</th>
-              <th scope="col" className="text-danger">Expense Description</th>
-              <th scope="col" className="text-danger">Expense Category</th>
+              <th scope="col" className="text-danger">Date</th>
+              <th scope="col" className="text-danger"> Name</th>
+              <th scope="col" className="text-danger"> Amount</th>
+              <th scope="col" className="text-danger"> Description</th>
+              <th scope="col" className="text-danger">Category</th>
               <th scope="col" className="text-danger">Actions</th>
               
             </tr>
@@ -22,6 +23,7 @@ function ExpenseList({ expenses }) {
                 <tr key={index}>
                   <td className="p-1">{expense.expenseDate}</td>
                   <td className="p-1">{expense.expenseName}</td>
+                  <td className="p-1">{`$ ${expense.expenseAmount}`}</td>
                   <td className="p-1">{expense.expenseDescription}</td>
                   <td className="p-1">{expense.expenseCategory}</td>
                   <td className="p-1">

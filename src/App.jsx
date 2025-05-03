@@ -14,32 +14,41 @@ const storedItems=[
     expenseName: "Internet Bill",
     expenseDescription: "Monthly internet bill",
     expenseCategory: "Utilities",
+    expenseAmount:400
   },
   {
     expenseDate: "2025-04-10",
     expenseName: "Movie Ticket",
     expenseDescription: "Movie night with friends",
     expenseCategory: "Entertainment",
+    expenseAmount:100
   },
 ]
 
 const App = () => {
-  const [expenses, setExpenses] = useState([]);
-  // Create local storage once
+  const [expenses, setExpenses] = useState(storedItems);
+ // sets up local storage
   useEffect(() => {
     const expenseData = localStorage.getItem("expenses");
-    if (expenseData) {
-      setExpenses(JSON.parse(expenseData));
-    } else {
+    if (!expenseData) {
+      // setExpenses(JSON.parse(expenseData));
       localStorage.setItem(
         "expenses",
         JSON.stringify(storedItems)
       );
-      setExpenses(storedItems);
+     
     }
-  }, []);
+  }
+   , []
+      );
 
-  const handleAddExpense = () => {};
+  const handleAddExpense = (formExpense) => {
+   setExpenses(prev=>[...prev, formExpense])
+  };
+
+  useEffect(()=>{
+    localStorage.setItem('expenses' ,JSON.stringify(expenses))
+  },[expenses])
 
   return (
     <div className="app-container h-100 d-flex flex-column">
