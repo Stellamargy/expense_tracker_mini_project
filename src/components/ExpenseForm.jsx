@@ -9,22 +9,19 @@ const initialFormState = {
   expenseAmount: 0,
 };
 
-function ExpenseForm({handleAddExpense}) {
+function ExpenseForm({ handleAddExpense }) {
   const [formData, setFormData] = useState(initialFormState);
 
   const handleInputChange = (e) => {
-    
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit=(event)=>{
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    handleAddExpense(formData)
-    setFormData(initialFormState)
-
-
-  }
+    handleAddExpense(formData);
+    setFormData(initialFormState);
+  };
 
   return (
     <div className="card shadow-sm p-4 border-danger">
@@ -107,7 +104,7 @@ function ExpenseForm({handleAddExpense}) {
           >
             Category
           </label>
-          <select
+          {/* <select
             className="form-select-sm  border border-dark"
             id="expenseCategory"
             name="expenseCategory"
@@ -119,6 +116,23 @@ function ExpenseForm({handleAddExpense}) {
             <option value="utilities">Utilities</option>
             <option value="entertainment">Entertainment</option>
             <option value="other">Other--</option>
+          </select> */}
+          <select
+            className="form-select-sm border border-dark"
+            id="expenseCategory"
+            name="expenseCategory"
+            value={formData.expenseCategory}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="" disabled>
+              -- Select Category --
+            </option>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="utilities">Utilities</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="other">Other</option>
           </select>
         </div>
 

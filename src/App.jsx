@@ -33,8 +33,10 @@ const App = () => {
 
   const [filterExpenses, setFilterExpense] = useState(expenses);
   const handleAddExpense = (formExpense) => {
-    setExpenses((prev) => [...prev, formExpense]);
-    setFilterExpense(expenses)
+    // I need to anticipate the new expense data after addition
+    const newExpenses=[...expenses,formExpense]
+    setExpenses((prev) => newExpenses);
+    setFilterExpense(newExpenses)
   };
 
   useEffect(() => {
