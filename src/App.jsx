@@ -8,37 +8,47 @@ import Header from "./components/Header";
 // import expenseData from "./data/expenseData";
 import { useState } from "react";
 import { useEffect } from "react";
-const storedItems=[
+const storedItems = [
   {
     expenseDate: "2025-04-09",
     expenseName: "Internet Bill",
     expenseDescription: "Monthly internet bill",
     expenseCategory: "Utilities",
-    expenseAmount:400
+    expenseAmount: 400,
   },
   {
     expenseDate: "2025-04-10",
     expenseName: "Movie Ticket",
     expenseDescription: "Movie night with friends",
     expenseCategory: "Entertainment",
-    expenseAmount:100
+    expenseAmount: 100,
   },
-]
+];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(()=>{
-    const data = localStorage.getItem("expenses")
-    return data ? JSON.parse(data): storedItems
+  const [expenses, setExpenses] = useState(() => {
+    const data = localStorage.getItem("expenses");
+    return data ? JSON.parse(data) : storedItems;
   });
-  
 
+  const [filterExpenses, setFilterExpense] = useState(expenses);
   const handleAddExpense = (formExpense) => {
-   setExpenses(prev=>[...prev, formExpense])
+    setExpenses((prev) => [...prev, formExpense]);
+    setFilterExpense(expenses)
   };
 
-  useEffect(()=>{
-    localStorage.setItem('expenses' ,JSON.stringify(expenses))
-  },[expenses])
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }, [expenses]);
+
+  const handleFilterExpense = (value) => {
+    const filteredExpenses = expenses.filter(
+      (expense) =>
+        expense.expenseName.toLowerCase().includes(value) ||
+        expense.expenseDescription.toLowerCase().includes(value)
+    );
+    setFilterExpense(filteredExpenses);
+  };
 
   return (
     <div className="app-container h-100 d-flex flex-column">
@@ -50,13 +60,12 @@ const App = () => {
           </section>
           <section className="display-expense-section col-12 col-lg-8">
             <section className="search-expense-wrapper mt-4 mt-lg-0">
-              <ExpenseSearch />
+              <ExpenseSearch handleFilterExpense={handleFilterExpense} />
             </section>
             <section className="expense-list-wrapper mt-1">
               <h2 className="fw-bolder text-danger h-6">Expenses</h2>
-              <ExpenseList expenses={expenses} />
-            </section>{" "}
-            {/* ✅ Fixed this closing tag */}
+              <ExpenseList expenses={filterExpenses} />
+            </section>
           </section>
         </div>
       </main>
